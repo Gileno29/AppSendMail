@@ -13,6 +13,7 @@
         private $para = null;
         private $assunto=null;
         private $mensagem=null;
+        public $descricao_status= array('codigo_status'=>null, 'descricao_status'=>'');
         public function __get($atributo){
             return $this->$atributo;
             
@@ -73,9 +74,12 @@
        $mail->AltBody = 'Oi eu sou o conteudo do email';
    
         $mail->send();
-        echo "Email enviado com Sucesso!!";   
+        $mensagem->status['codigo_status']=1;
+        $mensagem->status['descricao_status']="Email enviado com Sucesso!!"; 
+
    } catch (Exception $e) {
-       echo "Não foi possivel enviar a mensagem: {$mail->ErrorInfo}";
+    $mensagem->status['codigo_status']=2;
+    $mensagem->status['descricao_status']="não foi possivel enviar sua mensagem por favor tente mais tarde!!" ."{$mail->ErrorInfo}";
    }
 
 

@@ -1,3 +1,6 @@
+<?php
+	require('valida_acesso.php');
+?>
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -10,6 +13,15 @@
 	<body>
 
 		<div class="container">  
+			<nav class="navbar navbar-dark bg-dark">
+				<ul class= "nav-bar nav">
+					<li class="nav-item">
+						<a class=' btn btn-dark nav-link text-light border border-ligth' href='Logoff.php'>LogOff</a>
+					</li>
+				</ul>
+			</nav>
+
+			</div>
 
 			<div class="py-3 text-center">
 				<img class="d-block mx-auto mb-2" src="logo.png" alt="" width="72" height="72">
